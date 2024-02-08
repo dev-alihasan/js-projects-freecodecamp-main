@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Flipper</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      #color-box {
+        width: 200px;
+        height: 200px;
+        background-color: #3498db;
+        margin: 20px auto;
+        border-radius: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #aeb4b1;
+        color: #fff;
+        border: none;
+        border-radius: 1em;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Color Flipper</h1>
+      <div id="color-box"></div>
+      <button id="btn">Flip Color</button>
+    </div>
+
+    <script>
+      const colorBox = document.getElementById("color-box");
+      const button = document.getElementById("btn");
+
+      const colors = [
+        "#3498db",
+        "#e74c3c",
+        "#9b59b6",
+        "#2ecc71",
+        "#f1c40f",
+        "#e67e22",
+        "#1abc9c",
+        "#34495e",
+        "#95a5a6",
+        "#f39c12",
+        "#c0392b",
+        "#7f8c8d",
+      ];
+
+      button.addEventListener("click", changeColor);
+
+      function changeColor() {
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        colorBox.style.backgroundColor = randomColor;
+      }
+    </script>
+  </body>
+</html>
